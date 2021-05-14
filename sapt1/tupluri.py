@@ -1,0 +1,8 @@
+my_tuple = (1, 7, -3, 'a', True, None)
+my_tuple1 = (2, 3)
+print(my_tuple1 + my_tuple)
+my_tuple3 = ('1', )
+my_tuple4 = ()
+# print(type(my_tuple3))
+# print(list(my_tuple3))
+print(type(my_tuple4))
