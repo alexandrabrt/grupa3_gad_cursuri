@@ -24,3 +24,6 @@ class Companies(models.Model):
     website = models.CharField(max_length=100)
     company_type = models.CharField(max_length=10, choices=company_choices)
     location = models.ForeignKey('aplicatie1.Location', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.name}"

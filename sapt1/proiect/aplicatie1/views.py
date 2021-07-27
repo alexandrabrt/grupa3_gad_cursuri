@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.urls import reverse
 from django.views.generic import ListView, CreateView, UpdateView
@@ -5,7 +6,7 @@ from django.views.generic import ListView, CreateView, UpdateView
 from aplicatie1.models import Location
 
 
-class CreateIndexView(CreateView):
+class CreateIndexView(LoginRequiredMixin, CreateView):
     model = Location
     fields = '__all__'
     template_name = 'aplicatie1/location_form.html'
@@ -14,12 +15,12 @@ class CreateIndexView(CreateView):
         return reverse('aplicatie1:home')
 
 
-class HomeIndex(ListView):
+class HomeIndex(LoginRequiredMixin, ListView):
     model = Location
     template_name = 'aplicatie1/location_index.html'
 
 
-class UpdateLocationView(UpdateView):
+class UpdateLocationView(LoginRequiredMixin, UpdateView):
     model = Location
     fields = '__all__'
     template_name = 'aplicatie1/location_form.html'
