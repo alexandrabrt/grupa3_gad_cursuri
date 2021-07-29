@@ -13,7 +13,7 @@ for i in title:
             td_list = []
             if td_index.find_all('th'):
                 header = [th_index.get_text() for th_index in td_index.find_all('th')]
-            print(list(td_index.find_all('td')))
+            # print(list(td_index.find_all('td')))
             for index, trd_index in enumerate(list(td_index.find_all('td'))):
                 print(trd_index.get_text().lstrip('   '), index)
                 if index == 0:
